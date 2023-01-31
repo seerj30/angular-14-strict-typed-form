@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <label>
+    Title
+    <input formControlName="title" />
+  </label>
+
+  <form formGroupName="name">
+    <label>
+      First Name
+      <input formControlName="firstName" />
+    </label>
+
+    <label>
+      Last Name
+      <input formControlName="lastName" />
+    </label>
+  </form>
+
+  <label>
+    Interest
+    <ul *ngFor="let control of form.controls.interest.controls">
+      <li><input [formControl]="control" /></li>
+    </ul>
+  </label>
+</form>
